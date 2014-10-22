@@ -28,6 +28,7 @@ ExternalProject_Add ( EVENTSYSTEM
     PREFIX ${EXTERNALS_PREFIX}
     URL https://github.com/firecoders/eventsystem/archive/v0.1.0.tar.gz
     URL_HASH SHA256=ba8a9168b233d2f702de0973eac9914bcdd92e1adbf988ac0312d9a08fdfb793
+    DOWNLOAD_NAME eventsystem-v0.1.0.tar.gz
     CMAKE_ARGS ${EXTERNALS_CMAKE_ARGS}
 )
 
