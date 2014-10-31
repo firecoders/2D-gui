@@ -28,7 +28,8 @@
 
 #include "engine/events/interfaces/Receiver.h"
 #include "engine/gui/Draw_event.h"
-#include "engine/types/Dict.h"
+
+#include "engine/converters/Dict.hpp"
 
 namespace engine
 {

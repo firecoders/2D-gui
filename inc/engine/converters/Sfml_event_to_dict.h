@@ -28,8 +28,8 @@
 #include <SFML/Window.hpp>
 
 #include "engine/events/interfaces/Receiver.h"
-#include "engine/types/Dict.h"
 
+#include "engine/converters/Dict.hpp"
 #include "engine/converters/Sfml_enum_to_string.h"
 
 namespace engine
