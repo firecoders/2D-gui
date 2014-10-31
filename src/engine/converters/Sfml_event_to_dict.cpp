@@ -73,11 +73,11 @@ void Sfml_event_to_dict::receive ( std::shared_ptr < sf::Event > sfml_event )
             break;
 
             /* these are currently not supported:
-             * sf::Event::JoystickButtonPressed:
-             * sf::Event::JoystickButtonReleased:
-             * sf::Event::JoystickMoved:
-             * sf::Event::JoystickConnected:
-             * sf::Event::JoystickDisconnected:
+             * sf::Event::JoystickButtonPressed
+             * sf::Event::JoystickButtonReleased
+             * sf::Event::JoystickMoved
+             * sf::Event::JoystickConnected
+             * sf::Event::JoystickDisconnected
              */
 
         default: break;

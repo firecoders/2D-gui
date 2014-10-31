@@ -44,7 +44,7 @@ namespace engine
                 void receive ( std::shared_ptr < sf::Event > sfml_event );
 
             private:
-                events::Receiver< std::shared_ptr < types::Dict > >* receiver;
+                events::Receiver < std::shared_ptr < types::Dict > >* receiver;
         };
     } /* namespace converters */
 } /* namespace engine */
