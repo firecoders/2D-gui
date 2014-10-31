@@ -20,7 +20,7 @@ set ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall" )
 set ( CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -O1" )
 
 # Store external dependencies in build/external/
-set ( EXTERNALS_PREFIX ${PROJECT_BINARY_DIR}/external )
+set ( EXTERNALS_PREFIX ${PROJECT_BINARY_DIR}/external CACHE FILEPATH "Installation Path" )
 set ( EXTERNALS_CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTERNALS_PREFIX} )
 
 # Add the eventsystem
@@ -28,6 +28,7 @@ ExternalProject_Add ( EVENTSYSTEM
     PREFIX ${EXTERNALS_PREFIX}
     URL https://github.com/firecoders/eventsystem/archive/v0.1.0.tar.gz
     URL_HASH SHA256=ba8a9168b233d2f702de0973eac9914bcdd92e1adbf988ac0312d9a08fdfb793
+    DOWNLOAD_NAME eventsystem-v0.1.0.tar.gz
     CMAKE_ARGS ${EXTERNALS_CMAKE_ARGS}
 )
 
