@@ -33,17 +33,6 @@ void Sfml_event_to_dict::receive ( std::shared_ptr < sf::Event > sfml_event )
     std::shared_ptr < types::Dict > converted = std::make_shared < types::Dict > ();
 
     converted->insert ( { std::string ( "type.string" ), "converted sf::Event of type " + event_type ( sfml_event->type ) } );
-    auto type_vector = std::make_shared < std::vector < engine::types::Dict_element > >
-        ( std::move
-            ( std::vector < engine::types::Dict_element >
-                {
-                    std::string ( "sf" ),
-                    std::string ( "Event" ),
-                    event_type ( sfml_event->type )
-                }
-            )
-        );
-    converted->insert ( { std::string ( "type.vector" ), type_vector } );
 
     switch ( sfml_event->type )
     {
