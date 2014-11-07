@@ -22,6 +22,7 @@
 #include "engine/converters/Draw_event_to_dict.h"
 
 using namespace engine::converters;
+using namespace engine;
 
 Draw_event_to_dict::Draw_event_to_dict ( events::Receiver < std::shared_ptr < types::Dict > >* receiver ) :
     receiver ( receiver )
@@ -29,21 +30,8 @@ Draw_event_to_dict::Draw_event_to_dict ( events::Receiver < std::shared_ptr < ty
 
 void Draw_event_to_dict::receive ( std::shared_ptr < gui::Draw_event > draw_event )
 {
-    std::shared_ptr < engine::types::Dict > converted = std::make_shared < engine::types::Dict > ();
+    std::shared_ptr < types::Dict > converted = std::make_shared < types::Dict > ();
     converted->insert ( { std::string ( "type.string" ), std::string ( "converted engine::gui::Draw_event" ) } );
-
-    auto type_vector = std::make_shared < std::vector < engine::types::Dict_element > >
-        ( std::move
-            ( std::vector < engine::types::Dict_element >
-                {
-                    std::string ( "engine" ),
-                    std::string ( "gui" ),
-                    std::string ( "Draw_event" )
-                }
-            )
-        );
-
-    converted->insert ( { std::string ( "type.vector" ), type_vector } );
     converted->insert ( { std::string ( "rendertarget" ), draw_event->get_target () } );
     receiver->receive ( converted );
 }

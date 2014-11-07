@@ -28,7 +28,8 @@
 
 #include "engine/events/interfaces/Receiver.h"
 #include "engine/gui/Draw_event.h"
-#include "engine/types/Dict.h"
+
+#include "engine/converters/Dict.hpp"
 
 namespace engine
 {
@@ -37,7 +38,7 @@ namespace engine
         class Draw_event_to_dict : public events::Receiver < std::shared_ptr < gui::Draw_event > >
         {
             public:
-                Draw_event_to_dict ( events::Receiver < std::shared_ptr< types::Dict > >* receiver );
+                Draw_event_to_dict ( events::Receiver < std::shared_ptr < types::Dict > >* receiver );
 
                 virtual void receive ( std::shared_ptr < gui::Draw_event > draw_event );
 

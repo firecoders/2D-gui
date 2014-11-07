@@ -28,8 +28,8 @@
 #include <SFML/Window.hpp>
 
 #include "engine/events/interfaces/Receiver.h"
-#include "engine/types/Dict.h"
 
+#include "engine/converters/Dict.hpp"
 #include "engine/converters/Sfml_enum_to_string.h"
 
 namespace engine
@@ -44,7 +44,7 @@ namespace engine
                 void receive ( std::shared_ptr < sf::Event > sfml_event );
 
             private:
-                events::Receiver< std::shared_ptr < types::Dict > >* receiver;
+                events::Receiver < std::shared_ptr < types::Dict > >* receiver;
         };
     } /* namespace converters */
 } /* namespace engine */
