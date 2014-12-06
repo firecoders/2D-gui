@@ -37,28 +37,28 @@ namespace engine
     namespace types
     {
         template <>
-        struct Type_description < sf::RenderTarget* >
+        struct Dict_types < sf::RenderTarget* >
         {
             static constexpr const char* type_string = "sf::RenderTarget*";
-            static bool operator_equals ( const Dynamic_union& lhs, const Dynamic_union& rhs )
+            static bool operator_equals ( const Dynamic_union < Dict_types >& lhs, const Dynamic_union < Dict_types >& rhs )
             {
                 return lhs.get < sf::RenderTarget* > () == rhs.get < sf::RenderTarget* > ();
             }
-            static bool operator_less ( const Dynamic_union& lhs, const Dynamic_union& rhs )
+            static bool operator_less ( const Dynamic_union < Dict_types >& lhs, const Dynamic_union < Dict_types >& rhs )
             {
                 return lhs.get < sf::RenderTarget* > () < rhs.get < sf::RenderTarget* > ();
             }
         };
 
         template <>
-        struct Type_description < unsigned int >
+        struct Dict_types < unsigned int >
         {
             static constexpr const char* type_string = "unsigned int";
-            static bool operator_equals ( const Dynamic_union& lhs, const Dynamic_union& rhs )
+            static bool operator_equals ( const Dynamic_union < Dict_types >& lhs, const Dynamic_union < Dict_types >& rhs )
             {
                 return lhs.get < unsigned int > () == rhs.get < unsigned int > ();
             }
-            static bool operator_less ( const Dynamic_union& lhs, const Dynamic_union& rhs )
+            static bool operator_less ( const Dynamic_union < Dict_types >& lhs, const Dynamic_union < Dict_types >& rhs )
             {
                 return lhs.get < unsigned int > () < rhs.get < unsigned int > ();
             }
